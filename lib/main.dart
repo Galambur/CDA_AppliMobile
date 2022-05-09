@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jardindesplantes/models/type_plante.dart';
 import 'package:jardindesplantes/ui/arbre_liste.dart';
 import 'package:jardindesplantes/ui/arbuste_liste.dart';
+import 'package:jardindesplantes/ui/fleur_liste.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,6 +59,9 @@ class MyHomePage extends StatelessWidget {
                   case 3:
                   // todo
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ArbreListe()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => FleurListe()));
+                    break;
+                  case 4:
                     break;
                 }
               },
@@ -73,7 +77,7 @@ class MyHomePage extends StatelessWidget {
       height: 180,
       decoration: BoxDecoration(
           color: typePlante.color,
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+          borderRadius: BorderRadius.all(const Radius.circular(20.0)),
       ),
       margin: EdgeInsets.all(4.0),
       child: Column(
@@ -88,7 +92,7 @@ class MyHomePage extends StatelessWidget {
             child: Center(
               child: Text(
                 typePlante.libelle,
-                style: TextStyle(
+                style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Roboto',
                     fontSize: 20
