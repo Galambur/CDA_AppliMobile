@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jardindesplantes/models/type_plante.dart';
+import 'package:jardindesplantes/ui/arbre_liste.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,7 +43,28 @@ class MyHomePage extends StatelessWidget {
         body: Center(
           child: ListView.builder(
             itemCount: _typesPlantes.length,
-            itemBuilder: (context, index) => _buildRow(_typesPlantes[index]),
+            itemBuilder: (context, index) => InkWell(
+              onTap: () {
+                switch (_typesPlantes[index].type) {
+                  case 0:
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ArbreListe()));
+                    break;
+                  case 1:
+                    // todo
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ArbreListe()));
+                    break;
+                  case 2:
+                  // todo
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ArbreListe()));
+                    break;
+                  case 3:
+                  // todo
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ArbreListe()));
+                    break;
+                }
+              },
+              child: _buildRow(_typesPlantes[index]),
+            ),
             itemExtent: 180,
           ),
         ));
