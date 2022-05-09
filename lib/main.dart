@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Jardin des plantes',
       theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
+        primarySwatch: Colors.green,
       ),
       home: MyHomePage(title: 'Appli mobile Jardin des plantes'),
     );
@@ -31,10 +31,10 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({required this.title, Key? key}) : super(key: key);
 
   final _typesPlantes = [
-    TypePlante(1, 'Arbres', 'arbre.png', Colors.brown),
-    TypePlante(2, 'Arbustes', 'arbuste.png', Colors.lime),
-    TypePlante(3, 'Fleurs', 'fleur.png', Colors.pinkAccent),
-    TypePlante(4, 'Herbes', 'herbe.png', Colors.green)
+    TypePlante(1, 'Arbres', 'arbre.png', const Color.fromRGBO(145, 104, 80, 0.8)),
+    TypePlante(2, 'Arbustes', 'arbuste.png', const Color.fromRGBO(120, 161, 104, 0.8)),
+    TypePlante(3, 'Fleurs', 'fleur.png', const Color.fromRGBO(191, 132, 180, 0.8)),
+    TypePlante(4, 'Herbes', 'herbe.png', const Color.fromRGBO(94, 128, 110, 0.8))
   ];
 
   @override
@@ -50,19 +50,15 @@ class MyHomePage extends StatelessWidget {
               onTap: () {
                 switch (_typesPlantes[index].type) {
                   case 1:
-                    // todo
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ArbreListe()));
                     break;
                   case 2:
-                  // todo
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ArbusteListe()));
                     break;
                   case 3:
-                  // todo
                     Navigator.push(context, MaterialPageRoute(builder: (context) => FleurListe()));
                     break;
                   case 4:
-                  // todo
                     Navigator.push(context, MaterialPageRoute(builder: (context) => HerbeListe()));
                     break;
                 }
@@ -79,24 +75,27 @@ class MyHomePage extends StatelessWidget {
       height: 180,
       decoration: BoxDecoration(
           color: typePlante.color,
-          borderRadius: BorderRadius.all(const Radius.circular(20.0)),
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(10.0), top: Radius.circular(5.0)),
       ),
       margin: EdgeInsets.all(4.0),
       child: Column(
         children: <Widget>[
+
           Expanded(
-              child: Image.asset(
-                'assets/images/types_plantes/${typePlante.image}',
-                fit: BoxFit.fitWidth,
-              )),
+            child: Image.asset(
+              'assets/images/types_plantes/${typePlante.image}',
+              fit: BoxFit.fitWidth,
+            ),
+          ),
           Container(
             height: 50,
             child: Center(
               child: Text(
                 typePlante.libelle,
                 style: const TextStyle(
+                    color: Color.fromRGBO(1, 23, 7, 1),
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Roboto',
+                    fontFamily: 'RaleWay',
                     fontSize: 20
                 ),
               ),
