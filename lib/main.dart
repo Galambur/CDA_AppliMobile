@@ -30,7 +30,7 @@ class MyHomePage extends StatelessWidget {
     TypePlante(1, 'Arbres', 'arbre.png', Colors.brown),
     TypePlante(2, 'Arbustes', 'arbuste.png', Colors.lime),
     TypePlante(3, 'Fleurs', 'fleur.png', Colors.pinkAccent),
-    TypePlante(4, 'Plantes', 'plante.png', Colors.green)
+    TypePlante(4, 'Herbes', 'herbe.png', Colors.green)
   ];
 
   @override
