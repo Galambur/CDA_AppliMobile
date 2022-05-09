@@ -3,6 +3,7 @@ import 'package:jardindesplantes/models/type_plante.dart';
 import 'package:jardindesplantes/ui/arbre_liste.dart';
 import 'package:jardindesplantes/ui/arbuste_liste.dart';
 import 'package:jardindesplantes/ui/fleur_liste.dart';
+import 'package:jardindesplantes/ui/herbe_liste.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,10 +59,11 @@ class MyHomePage extends StatelessWidget {
                     break;
                   case 3:
                   // todo
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ArbreListe()));
                     Navigator.push(context, MaterialPageRoute(builder: (context) => FleurListe()));
                     break;
                   case 4:
+                  // todo
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HerbeListe()));
                     break;
                 }
               },
